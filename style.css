@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#navbar{
+    background-color: black;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#navbar img{
+    width: 150px;
+}
+
+#navbar input{
+    padding: 10px;
+    border-radius: 10px;    
+}
+
+#main table{
+    text-align: center;
+}
+
+table, td, tr, th {
+    border: 1px solid black;
+    font-size: 20px;
+}

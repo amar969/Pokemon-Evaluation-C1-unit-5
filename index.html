@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="navbar">
+        <div id="icon">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCtfuTrLFMuKSdNOMApOI5-KAe0tzk2TZ2xQ&usqp=CAU" alt="">
+        </div>
+        <div id="search-div">
+            <input type="text" id="search" oninput="debounce(mainPokemon, 1000)"/>
+        </div>
+    </div>
+    <div id="main" onload="main()">
+        <div id="display-data"></div>
+    </div>
+    <div id="showResult"></div>
+    <script src="index.js"></script>
+</body>
+</html>
