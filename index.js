@@ -68,7 +68,7 @@ async function searchPoke() {
 
 let pokemon_div = document.getElementById("showResult");
 function displayPokemon(pokemonList1) {
-    
+    pokemon_div.innerHTML = "";
     let id = document.createElement("p");
     id.innerHTML = pokemonList1.id;
 
@@ -81,21 +81,23 @@ function displayPokemon(pokemonList1) {
     let weight = document.createElement("p");
     weight.innerHTML = pokemonList1.weight;
 
-    
-    
-
-
     pokemon_div.appendChild(id);
     pokemon_div.appendChild(p);
     pokemon_div.appendChild(height);
     pokemon_div.appendChild(weight);
     
     
-    pokemonList1.abilities.ability.name.forEach((element) =>{
-        let ab = document.createElement("p");
-        ab.innerHTML = element;
+    pokemonList1.abilities.forEach((element) =>{
+        let ab = document.createElement("span");
+        ab.textContent = element.ability.name;
         pokemon_div.appendChild(ab);    
     }) 
+
+    pokemonList1.moves.forEach((element) => {
+        let mo = document.createElement("span");
+        mo.textContent = element.move.name + ", ";
+        pokemon_div.appendChild(mo);
+    })
 
 }   
 
