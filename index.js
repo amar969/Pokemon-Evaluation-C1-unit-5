@@ -60,7 +60,7 @@ async function searchPoke() {
   try {
     let res = await fetch(`https://pokeapi.co/api/v2/pokemon/${search}/`);
     let data = await res.json();
-    console.log(data);
+    return data;
   } catch (err) {
     console.log(err);
   }
@@ -68,13 +68,35 @@ async function searchPoke() {
 
 let pokemon_div = document.getElementById("showResult");
 function displayPokemon(pokemonList1) {
-    pokemonList1.forEach((element) => {
     
-    let p = document.createElement("p");
-    p.innerHTML = element;
+    let id = document.createElement("p");
+    id.innerHTML = pokemonList1.id;
 
+    let p = document.createElement("p");
+    p.innerHTML = pokemonList1.name;
+
+    let height = document.createElement("p");
+    height.innerHTML = pokemonList1.height;
+
+    let weight = document.createElement("p");
+    weight.innerHTML = pokemonList1.weight;
+
+    
+    
+
+
+    pokemon_div.appendChild(id);
     pokemon_div.appendChild(p);
-    });
+    pokemon_div.appendChild(height);
+    pokemon_div.appendChild(weight);
+    
+    
+    pokemonList1.abilities.ability.name.forEach((element) =>{
+        let ab = document.createElement("p");
+        ab.innerHTML = element;
+        pokemon_div.appendChild(ab);    
+    }) 
+
 }   
 
 var timerID; // undefined
